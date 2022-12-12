@@ -127,7 +127,7 @@ namespace CountriesApp.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var countries = await _db.Countries.FindAsync(id);
-            _db.Countries.Remove(countries);
+            _ = _db.Countries.Remove(countries);
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
